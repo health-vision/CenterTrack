@@ -14,9 +14,7 @@ import _ext as _backend
 
 class _DCNv2(Function):
     @staticmethod
-    def forward(
-        ctx, input, offset, mask, weight, bias, stride, padding, dilation, deformable_groups
-    ):
+    def forward(ctx, input, offset, mask, weight, bias, stride, padding, dilation, deformable_groups):
         ctx.stride = _pair(stride)
         ctx.padding = _pair(padding)
         ctx.dilation = _pair(dilation)
@@ -66,9 +64,7 @@ class _DCNv2(Function):
         return grad_input, grad_offset, grad_mask, grad_weight, grad_bias, None, None, None, None
 
     @staticmethod
-    def symbolic(
-        g, input, offset, mask, weight, bias, stride, padding, dilation, deformable_groups
-    ):
+    def symbolic(g, input, offset, mask, weight, bias, stride, padding, dilation, deformable_groups):
         from torch.nn.modules.utils import _pair
 
         stride = _pair(stride)
@@ -94,16 +90,7 @@ dcn_v2_conv = _DCNv2.apply
 
 
 class DCNv2(nn.Module):
-    def __init__(
-        self,
-        in_channels,
-        out_channels,
-        kernel_size,
-        stride,
-        padding,
-        dilation=1,
-        deformable_groups=1,
-    ):
+    def __init__(self, in_channels, out_channels, kernel_size, stride, padding, dilation=1, deformable_groups=1):
         super(DCNv2, self).__init__()
         self.in_channels = in_channels
         self.out_channels = out_channels
@@ -126,10 +113,7 @@ class DCNv2(nn.Module):
         self.bias.data.zero_()
 
     def forward(self, input, offset, mask):
-        assert (
-            2 * self.deformable_groups * self.kernel_size[0] * self.kernel_size[1]
-            == offset.shape[1]
-        )
+        assert 2 * self.deformable_groups * self.kernel_size[0] * self.kernel_size[1] == offset.shape[1]
         assert self.deformable_groups * self.kernel_size[0] * self.kernel_size[1] == mask.shape[1]
         return dcn_v2_conv(
             input,
@@ -145,19 +129,8 @@ class DCNv2(nn.Module):
 
 
 class DCN(DCNv2):
-    def __init__(
-        self,
-        in_channels,
-        out_channels,
-        kernel_size,
-        stride,
-        padding,
-        dilation=1,
-        deformable_groups=1,
-    ):
-        super(DCN, self).__init__(
-            in_channels, out_channels, kernel_size, stride, padding, dilation, deformable_groups
-        )
+    def __init__(self, in_channels, out_channels, kernel_size, stride, padding, dilation=1, deformable_groups=1):
+        super(DCN, self).__init__(in_channels, out_channels, kernel_size, stride, padding, dilation, deformable_groups)
 
         channels_ = self.deformable_groups * 3 * self.kernel_size[0] * self.kernel_size[1]
         self.conv_offset_mask = nn.Conv2d(
@@ -314,23 +287,14 @@ class DCNPooling(DCNv2Pooling):
         deform_fc_dim=1024,
     ):
         super(DCNPooling, self).__init__(
-            spatial_scale,
-            pooled_size,
-            output_dim,
-            no_trans,
-            group_size,
-            part_size,
-            sample_per_part,
-            trans_std,
+            spatial_scale, pooled_size, output_dim, no_trans, group_size, part_size, sample_per_part, trans_std
         )
 
         self.deform_fc_dim = deform_fc_dim
 
         if not no_trans:
             self.offset_mask_fc = nn.Sequential(
-                nn.Linear(
-                    self.pooled_size * self.pooled_size * self.output_dim, self.deform_fc_dim
-                ),
+                nn.Linear(self.pooled_size * self.pooled_size * self.output_dim, self.deform_fc_dim),
                 nn.ReLU(inplace=True),
                 nn.Linear(self.deform_fc_dim, self.deform_fc_dim),
                 nn.ReLU(inplace=True),

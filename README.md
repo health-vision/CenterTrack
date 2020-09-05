@@ -1,3 +1,16 @@
+# Compile
+
+```
+cd src/lib/model/networks/external/DCNv2
+./make.sh
+```
+
+# Run
+```
+PYTHONPATH='.'  python src/demo.py tracking,multi_pose --load_model models/coco_pose_tracking.pth --demo /mnt/ssd1/dataset/face-videos/video1/3/0803/Event20200803103623006.avi --save_results
+
+```
+
 # Tracking Objects as Points
 Simultaneous object detection and tracking using center points:
 ![](readme/fig2.png)

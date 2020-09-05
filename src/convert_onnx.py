@@ -6,20 +6,12 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-import _init_paths
 import os
-import json
-import cv2
-import numpy as np
-import time
-from progress.bar import Bar
-import torch
-import copy
 
+import torch
+from dataset.dataset_factory import dataset_factory
 from model.model import create_model, load_model
 from opts import opts
-from dataset.dataset_factory import dataset_factory
-from detector import Detector
 
 
 def convert_onnx(opt):

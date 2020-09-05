@@ -19,9 +19,13 @@
            with appropriate subdir and file names (all subdir's need to be created)
 """
 
-import sys, os, copy, math
-from munkres import Munkres
+import copy
+import math
+import os
+import sys
 from collections import defaultdict
+
+from munkres import Munkres
 
 try:
     from ordereddict import OrderedDict  # can be installed using pip

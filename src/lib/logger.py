@@ -4,10 +4,11 @@ from __future__ import print_function
 
 # Code referenced from https://gist.github.com/gyglim/1f8dfb1b5c82627ae3efcfbbadb9f514
 import os
-import time
-import sys
-import torch
 import subprocess
+import sys
+import time
+
+import torch
 
 USE_TENSORBOARD = True
 try:

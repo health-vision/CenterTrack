@@ -30,26 +30,24 @@ To work with the original KITTI dataset, use these parameters:
  --nusc_kitti_dir /data/sets/kitti --split training
 See https://www.nuscenes.org/object-detection for more information on the nuScenes result format.
 """
-import os
 import json
+import os
 from typing import List, Dict, Any
 
-from pyquaternion import Quaternion
+import matplotlib.pyplot as plt
 import numpy as np
-
 # import fire
 from PIL import Image
-import matplotlib.pyplot as plt
-
+from nuscenes.eval.detection.utils import category_to_detection_name
 from nuscenes.nuscenes import NuScenes
-from nuscenes.utils.geometry_utils import transform_matrix
-from nuscenes.utils.geometry_utils import BoxVisibility
 from nuscenes.utils.data_classes import LidarPointCloud, Box
+from nuscenes.utils.geometry_utils import BoxVisibility
+from nuscenes.utils.geometry_utils import transform_matrix
 from nuscenes.utils.splits import create_splits_logs
+from pyquaternion import Quaternion
 
 # from nuscenes.utils.kitti import KittiDB
 from .utils_kitti import KittiDB
-from nuscenes.eval.detection.utils import category_to_detection_name
 
 
 class KittiConverter:

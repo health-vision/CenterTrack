@@ -10,9 +10,9 @@ from __future__ import print_function
 
 import torch
 import torch.nn as nn
-from .utils import _tranpose_and_gather_feat, _nms, _topk
 import torch.nn.functional as F
-from utils.image import draw_umich_gaussian
+
+from .utils import _tranpose_and_gather_feat
 
 
 def _slow_neg_loss(pred, gt):

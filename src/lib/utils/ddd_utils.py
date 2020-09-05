@@ -2,8 +2,8 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-import numpy as np
 import cv2
+import numpy as np
 
 
 def comput_corners_3d(dim, rotation_y):

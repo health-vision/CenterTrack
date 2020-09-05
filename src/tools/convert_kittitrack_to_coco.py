@@ -2,11 +2,10 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-import pickle
 import json
-import numpy as np
 import os
-import cv2
+
+import numpy as np
 
 DATA_PATH = "../../data/kitti_tracking/"
 SPLITS = ["train_half", "val_half", "train", "test"]

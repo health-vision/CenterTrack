@@ -2,16 +2,18 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-# import _init_paths
-
+import copy
+import json
 import os
 import sys
+
 import cv2
-import json
-import copy
 import numpy as np
-from src.lib.opts import opts
+
 from src.lib.detector import Detector
+from src.lib.opts import opts
+
+# import _init_paths
 
 
 image_ext = ["jpg", "jpeg", "png", "webp"]

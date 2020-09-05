@@ -1,10 +1,9 @@
-import numpy as np
-import cv2
 import os
-import glob
 import sys
 from collections import defaultdict
-from pathlib import Path
+
+import cv2
+import numpy as np
 
 GT_PATH = "../../data/mot17/test/"
 IMG_PATH = GT_PATH

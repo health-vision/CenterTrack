@@ -2,16 +2,9 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-import pycocotools.coco as coco
-import numpy as np
-import torch
-import json
-import cv2
 import os
-import math
 
 from ..generic_dataset import GenericDataset
-from ...utils.ddd_utils import compute_box_3d, project_to_image
 
 
 class KITTI(GenericDataset):

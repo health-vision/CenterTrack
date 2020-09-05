@@ -3,9 +3,9 @@ from __future__ import division
 from __future__ import print_function
 
 import torch
-import torch.nn as nn
-from .utils import _gather_feat, _tranpose_and_gather_feat
+
 from .utils import _nms, _topk, _topk_channel
+from .utils import _tranpose_and_gather_feat
 
 
 def _update_kps_with_hm(kps, output, batch, num_joints, K, bboxes=None, scores=None):

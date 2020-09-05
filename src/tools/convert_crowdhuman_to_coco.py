@@ -1,7 +1,5 @@
-import os
-import numpy as np
 import json
-import cv2
+import os
 
 DATA_PATH = "../../data/crowdhuman/"
 OUT_PATH = DATA_PATH + "annotations/"

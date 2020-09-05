@@ -6,12 +6,12 @@ Modified by Xingyi Zhou
 
 import argparse
 import glob
-import os
 import logging
-import motmetrics as mm
-import pandas as pd
+import os
 from collections import OrderedDict
 from pathlib import Path
+
+import motmetrics as mm
 
 
 def parse_args():

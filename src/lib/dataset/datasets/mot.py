@@ -2,12 +2,11 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-import pycocotools.coco as coco
-from pycocotools.cocoeval import COCOeval
-import numpy as np
-import json
 import os
 from collections import defaultdict
+
+import numpy as np
+
 from ..generic_dataset import GenericDataset
 
 

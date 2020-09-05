@@ -1,10 +1,8 @@
-import numpy as np
-import cv2
 import os
-import glob
 import sys
 from collections import defaultdict
-from pathlib import Path
+
+import cv2
 
 DATA_PATH = "../../data/kitti_tracking/"
 IMG_PATH = DATA_PATH + "data_tracking_image_2/testing/image_02/"

@@ -1,4 +1,5 @@
 import os
+
 import torch
 
 IN_PATH = "../../centertrack_models/"

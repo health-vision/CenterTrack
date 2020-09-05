@@ -7,11 +7,12 @@ from __future__ import print_function
 import math
 from os.path import join
 
-import torch
-from torch import nn
-import torch.utils.model_zoo as model_zoo
-from .base_model import BaseModel
 import numpy as np
+import torch
+import torch.utils.model_zoo as model_zoo
+from torch import nn
+
+from .base_model import BaseModel
 
 BatchNorm = nn.BatchNorm2d
 

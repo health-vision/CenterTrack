@@ -2,17 +2,15 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-import _init_paths
 import os
 
 import torch
 import torch.utils.data
-from opts import opts
-from model.model import create_model, load_model, save_model
-from model.data_parallel import DataParallel
-from logger import Logger
-from dataset.dataset_factory import get_dataset
-from trainer import Trainer
+from src.lib.dataset.dataset_factory import get_dataset
+from src.lib.logger import Logger
+from src.lib.model.model import create_model, load_model, save_model
+from src.lib.opts import opts
+from src.lib.trainer import Trainer
 
 
 def get_optimizer(opt, model):

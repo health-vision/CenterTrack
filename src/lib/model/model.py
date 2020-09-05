@@ -2,16 +2,13 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-import torchvision.models as models
 import torch
-import torch.nn as nn
-import os
 
 from .networks.dla import DLASeg
-from .networks.resdcn import PoseResDCN
-from .networks.resnet import PoseResNet
 from .networks.dlav0 import DLASegv0
 from .networks.generic_network import GenericNetwork
+from .networks.resdcn import PoseResDCN
+from .networks.resnet import PoseResNet
 
 _network_factory = {
     "resdcn": PoseResDCN,

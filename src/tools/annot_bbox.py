@@ -1,8 +1,9 @@
+import argparse
+import json
 import os
 import sys
-import json
+
 import cv2
-import argparse
 import numpy as np
 
 image_ext = ["jpg", "jpeg", "png", "webp"]

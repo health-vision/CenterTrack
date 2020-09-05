@@ -3,19 +3,18 @@ from __future__ import division
 from __future__ import print_function
 
 import time
-import torch
+
 import numpy as np
-from progress.bar import Bar
-
+import torch
 from model.data_parallel import DataParallel
-from utils.utils import AverageMeter
-
-from model.losses import FastFocalLoss, RegWeightedL1Loss
-from model.losses import BinRotLoss, WeightedBCELoss
 from model.decode import generic_decode
-from model.utils import _sigmoid, flip_tensor, flip_lr_off, flip_lr
+from model.losses import BinRotLoss, WeightedBCELoss
+from model.losses import FastFocalLoss, RegWeightedL1Loss
+from model.utils import _sigmoid
+from progress.bar import Bar
 from utils.debugger import Debugger
 from utils.post_process import generic_post_process
+from utils.utils import AverageMeter
 
 
 class GenericLoss(torch.nn.Module):

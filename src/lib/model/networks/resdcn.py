@@ -9,11 +9,9 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-import os
-import math
 import logging
+import math
 
-import torch
 import torch.nn as nn
 
 try:

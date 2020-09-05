@@ -2,23 +2,23 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-import cv2
 import copy
-import numpy as np
-from progress.bar import Bar
-import time
-import torch
 import math
+import time
 
-from .model.model import create_model, load_model
-from .model.decode import generic_decode
-from .model.utils import flip_tensor, flip_lr_off, flip_lr
-from .utils.image import get_affine_transform, affine_transform
-from .utils.image import draw_umich_gaussian, gaussian_radius
-from .utils.post_process import generic_post_process
-from .utils.debugger import Debugger
-from .utils.tracker import Tracker
+import cv2
+import numpy as np
+import torch
+
 from .dataset.dataset_factory import get_dataset
+from .model.decode import generic_decode
+from .model.model import create_model, load_model
+from .model.utils import flip_tensor, flip_lr_off, flip_lr
+from .utils.debugger import Debugger
+from .utils.image import draw_umich_gaussian, gaussian_radius
+from .utils.image import get_affine_transform, affine_transform
+from .utils.post_process import generic_post_process
+from .utils.tracker import Tracker
 
 
 class Detector(object):

@@ -2,12 +2,10 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-import matplotlib.pyplot as plt
-import mpl_toolkits.mplot3d
-from mpl_toolkits.mplot3d import Axes3D
-import time
-import numpy as np
 import cv2
+import matplotlib.pyplot as plt
+import numpy as np
+
 from .ddd_utils import compute_box_3d, project_to_image, draw_box_3d
 
 

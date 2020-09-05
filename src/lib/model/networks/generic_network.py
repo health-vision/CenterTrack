@@ -2,11 +2,11 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-import torch
 from torch import nn
+
 from .backbones.dla import dla34
-from .backbones.resnet import Resnet
 from .backbones.mobilenet import MobileNetV2
+from .backbones.resnet import Resnet
 from .necks.dlaup import DLASeg
 from .necks.msraup import MSRAUp
 

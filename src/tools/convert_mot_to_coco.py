@@ -1,7 +1,7 @@
-import os
-import numpy as np
 import json
-import cv2
+import os
+
+import numpy as np
 
 # Use the same script for MOT16
 # DATA_PATH = '../../data/mot16/'

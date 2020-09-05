@@ -2,21 +2,19 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-import _init_paths
-import os
+import copy
 import json
+import os
+
 import cv2
 import numpy as np
-import time
-from progress.bar import Bar
 import torch
-import copy
-
-from opts import opts
-from logger import Logger
-from utils.utils import AverageMeter
 from dataset.dataset_factory import dataset_factory
 from detector import Detector
+from logger import Logger
+from opts import opts
+from progress.bar import Bar
+from utils.utils import AverageMeter
 
 
 class PrefetchDataset(torch.utils.data.Dataset):

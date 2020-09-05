@@ -3,16 +3,11 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-import pycocotools.coco as coco
-from pycocotools.cocoeval import COCOeval
-from pyquaternion import Quaternion
-import numpy as np
-import torch
 import json
-import cv2
 import os
-import math
-import copy
+
+import numpy as np
+from pyquaternion import Quaternion
 
 from ..generic_dataset import GenericDataset
 
